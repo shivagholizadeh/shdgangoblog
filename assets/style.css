@@ -1,3 +1,16 @@
-body{
-    background-color: gray;
+body {
+    background-color: #0f221f;
+    background_image: url(/static/viona.jpg);
+    color: #fff;
+}
+body * {
+    font-family: arial
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+}
+a, a:hover, a:visited {
+    color: aqua;
+    text-decoration: none;
 }
