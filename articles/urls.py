@@ -19,8 +19,11 @@ from django.urls import path
 from django.urls import path
 from . import views
 
+app_name = 'AppArticlesName'
 urlpatterns = [
     # path('about/', views.about),
-    path('', views.articles_list),
+    path('', views.articles_list, name="PathlistName"),
+    path('create', views.articles_create, name="PathCreateName"),
+    path('<ParamSlug>', views.articles_detail, name="PathDetailName"),
 
 ]

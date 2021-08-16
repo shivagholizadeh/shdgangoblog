@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+{#    <form class="" action="login.html" method="post">#}
+    <form class="" action="{% url 'AppAccountsName:PathLoginName' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+       <input type="submit" , value="Login">
+    </form>
+
+{% endblock %}

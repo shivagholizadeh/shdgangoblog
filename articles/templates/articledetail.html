@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='article-detail'>
+        <div class='article'>
+             <img src="{{ VarTableArticle.image.url }}" alt = "" width="500" height="500" align="Right">
+             <h1>{{ VarTableArticle.title }}</h1>
+             <p> {{ VarTableArticle.body }}</p>
+             <p> {{ VarTableArticle.slug }}</p>
+             <p> {{ VarTableArticle.date}} </p>
+{#             <p> {{ VarTableArticle.image}} </p>#}
+        </div>
+    </div>
+{% endblock %}
