@@ -1,10 +1,11 @@
+
 body {
     background-color: #0f221f;
-    background-image: url(/static/viona.jpg);
+    background-image: url(viona.jpg);
     background-repeat-y: no-repeat;
     background-repeat-x: no-repeat;
     background-attachment: fixed;
-    /*background-position: center top;*/
+    background-position: center;
     color: #fff;
 }
 
@@ -21,3 +22,124 @@ a, a:hover, a:visited {
     color: aqua;
     text-decoration: none;
 }
+
+.wrapper {
+    max-width: 1000px;
+    margin: auto;
+}
+
+div.wrapper h1 {
+    text-align: center;
+    margin: auto;
+    font-size: 2.4em;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+nav button {
+    background: darkblue;
+    color: red;
+    cursor: pointer;
+    border: 2;
+    font-size: 1em;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-gap: 30px;
+}
+
+.article {
+    padding: 10px;
+    border: 1px solid darkblue;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.article h2 {
+    font-size: 1.5em;
+}
+
+.article  .author{
+    padding: 10px;
+    background-color: darkblue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: red;
+}
+.wrapper .article-detail .article img {
+    max-width: 100%;
+
+}
+
+.article-detail .article h2 {
+    color: aqua;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.wrapper .article-detail .article p {
+    text-align: center;
+}
+
+.site-form{
+    margin-top: 60px;
+    border: 1px solid aqua;
+    padding: 20px;
+}
+
+.site-form input,.site-form textarea {
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
+
+a.highlight {
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 4px;
+    color: green;
+    font-size: 1.8em;
+    align-content:right;
+}
+.helptext , .helptext ul {
+    margin: 0 auto 20px;
+    font-size: 0.9em;
+    color: green;
+    display: block;
+}
+
+.errorlist {
+    padding: 0;
+}
+.errorlist li {
+    margin: 20px 0;
+    border:1px  solid orangered;
+    color: orangered;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.site-form input[type='submit']{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: aqua;
+    color: darkblue;
+    margin: 10px 0 ;
+    font-size: 1.2em;
+
+}
+

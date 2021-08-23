@@ -2,11 +2,14 @@
 
 {% block content %}
     <h1>Login</h1>
-{#    <form class="" action="login.html" method="post">#}
+    {#    <form class="" action="login.html" method="post">#}
     <form class="" action="{% url 'AppAccountsName:PathLoginName' %}" method="post">
         {{ form }}
         {% csrf_token %}
-       <input type="submit" , value="Login">
+        {% if request.GET.next %}
+            <input type="hidden" name="VarNextPage" value="{{ request.GET.next }}">
+        {% endif %}
+        <input type="submit" , value="Login">
     </form>
 
 {% endblock %}

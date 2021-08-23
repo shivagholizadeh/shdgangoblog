@@ -11,23 +11,42 @@
 
 <body>
 <h2><a href="{% url  'AppArticlesName:PathlistName' %}"> logo </a></h2>
+<header>
+    <nav>
+        <ul>
 
-<nav>
-    <ul>
-        <li>
-{#          <form class="" action="{% url 'AppAccountsName:PathSignupName' %}" method="post">#}
-            <form class="logout-link" action="{% url 'AppAccountsName:PathLogoutName' %}" method="post">
+            {% if  user.is_authenticated %}
+                <li>
 
-                {% csrf_token %}
-                <button type="submit">logout</button>
-            </form>
+                    <form class="logout-link" action="{% url 'AppAccountsName:PathLogoutName' %}" method="post">
 
-        </li>
+                        {% csrf_token %}
+                        <button type="submit">logout</button>
+                    </form>
 
-    </ul>
+                </li>
+                <li>
+                    <a class="highlight"   href="{% url 'AppArticlesName:PathCreateName' %}"> create new article </a>
 
-</nav>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'AppAccountsName:PathLoginName' %}"> login user </a>
 
+                </li>
+
+                <li>
+
+                    <a href="{% url 'AppAccountsName:PathSignupName' %}">signup new user</a>
+
+                </li>
+
+            {% endif %}
+        </ul>
+
+    </nav>
+
+</header>
 
 <div class='wrapper'>
     {% block content %}

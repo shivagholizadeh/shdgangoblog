@@ -26,7 +26,10 @@ def login_view(request):
         if form.is_valid():
             Varuser = form.get_user()
             login(request, Varuser)
-            return redirect('AppArticlesName:PathlistName')
+            if 'VarNextPage' in request.POST:
+                return redirect(request.POST.get('VarNextPage'))
+            else:
+                return redirect('AppArticlesName:PathlistName')
     else:
         form = AuthenticationForm()
 
@@ -35,7 +38,6 @@ def login_view(request):
 
 
 def logout_view(request):
-
     if request.method == 'POST':
         logout(request)
         return redirect('AppArticlesName:PathlistName')

@@ -1,4 +1,4 @@
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 
 <title>
     {% block title %}
@@ -7,14 +7,23 @@
 </title>
 
 {% block content %}
-    <div class="container">
-        <p>'new article list'</p>
+
+    <h1>'Article list'</h1>
+    <div class="articles">
         {% for perArticle in VarTableArticle %}
-            <h2><a href="{% url 'AppArticlesName:PathDetailName' perArticle.slug %} "> {{ perArticle.title }}  </a></h2>
-            <p>{{ perArticle.title }}</p>
-            <p>{{ perArticle.slug }}</p>
-            <p>{{ perArticle.snippet }}</p>
-            <p>{{ perArticle.date }}</p>
+            <div class="article">
+                <h2><a href="{% url 'AppArticlesName:PathDetailName' perArticle.slug %} "> {{ perArticle.title }}  </a>
+                </h2>
+                <p>{{ perArticle.title }}</p>
+                <p>{{ perArticle.slug }}</p>
+                <p>{{ perArticle.snippet }}</p>
+                <p>{{ perArticle.date }}</p>
+                <p>{{ perArticle.datarticle }}</p>
+
+                <div class="author">
+                    added by {{ perArticle.author.username }}
+                </div>
+            </div>
         {% endfor %}
     </div>
 
